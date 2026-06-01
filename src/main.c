@@ -84,14 +84,6 @@ int main(int argc, char **argv) {
 
         SDL_Surface *windowsurface = SDL_GetWindowSurface(window);
         printf("Surface format: %s\n", SDL_GetPixelFormatName(windowsurface->format));
-        /*for (int y = 0; y < window_height; y++) {
-                for (int x = 0; x < window_width; x++) {
-                        Uint8 *src = pixels + (y * bmp_pitch + x * 3);
-                        Uint32 *dst = (Uint32 *)windowsurface->pixels +
-                                      ((window_height - 1 - y) * (windowsurface->pitch / 4) + x);
-                        *dst = (src[0] << 16) | (src[1] << 8) | src[2];
-                }
-        }*/
 
         Uint8 *dst_bytes = (Uint8 *)windowsurface->pixels;
         for (int y = 0; y < window_height; y++) {
